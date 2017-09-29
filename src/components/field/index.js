@@ -476,7 +476,6 @@ export default class TextField extends PureComponent {
       textAlign: I18nManager.isRTL ? 'right' : 'left',
     },
   };
-  const navigation = addNavigationHelpers({ dispatch, state: nav });
   setCustomText(customTextProps);
   setCustomTextInput(customTextProps);
 
