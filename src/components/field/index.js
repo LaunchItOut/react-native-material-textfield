@@ -8,7 +8,9 @@ import {
   StyleSheet,
   Platform,
   ViewPropTypes,
+  I18nManager,
 } from 'react-native';
+import { setCustomText, setCustomTextInput } from 'react-native-global-props';
 
 import RN from 'react-native/package.json';
 
@@ -468,6 +470,15 @@ export default class TextField extends PureComponent {
       fontSize: titleFontSize,
       style: titleTextStyle,
     };
+
+    const customTextProps = {
+    style: {
+      textAlign: I18nManager.isRTL ? 'right' : 'left',
+    },
+  };
+  const navigation = addNavigationHelpers({ dispatch, state: nav });
+  setCustomText(customTextProps);
+  setCustomTextInput(customTextProps);
 
     return (
       <View {...containerProps}>
